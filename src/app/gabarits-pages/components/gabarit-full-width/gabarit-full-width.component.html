@@ -1,0 +1,13 @@
+<div class="bandeau">
+  <h1>{{ title }}</h1>
+</div>
+
+<div class="row">
+  <div class="col-12 col-md-8">
+    <ng-content select=".tr-left"></ng-content>
+  </div>
+  <div class="col-12 col-md-4">
+    <ng-content select=".tr-right"></ng-content>
+  </div>
+</div>
+{{ check() }}

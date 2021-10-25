@@ -1,0 +1,9 @@
+.d-flex {
+  align-items: center;
+  justify-content: center;
+  p {
+    font-size: var(--app-regular-fs);
+    margin: 10px;
+  }
+  background: var(--app-bg-light);
+}

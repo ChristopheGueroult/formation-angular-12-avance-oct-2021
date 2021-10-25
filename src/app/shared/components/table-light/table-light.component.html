@@ -1,0 +1,11 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th *ngFor="let itemPapa of headers" scope="col">{{ itemPapa }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-content></ng-content>
+  </tbody>
+</table>
+{{ check() }}

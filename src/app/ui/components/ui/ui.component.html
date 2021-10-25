@@ -1,0 +1,43 @@
+<header class="fixed-top">
+  <!-- utiliser la structure ngif then else -->
+  <span (click)="toggle()">
+    <div *ngIf="!open; then thenBlock; else elseBlock"></div>
+
+    <ng-template #thenBlock>
+      <ng-content select=".tr-btn-open"></ng-content>
+    </ng-template>
+    <ng-template #elseBlock>
+      <ng-content select=".tr-btn-close"></ng-content>
+    </ng-template>
+  </span>
+
+  <!-- une instance de app-header dans le dom via une transclusion -->
+  <ng-content select=".tr-header"></ng-content>
+</header>
+<main [ngClass]="{'close-aside': !open}">
+  <div class="shadow position-fixed">
+
+  </div>
+
+  <aside>
+    <div class="scroller">
+      <ng-content select=".tr-nav"></ng-content>
+    </div>
+  </aside>
+
+  <div class="page">
+
+    <div class="contents">
+      <ng-content select=".tr-content"></ng-content>
+      <!-- ici ng content permet de projetter router-outlet à cet endroit -->
+      <!-- router-outlet qui reste présent dans le DOM et qui permet au router de projetter nos components page juste en dessous -->
+    </div>
+
+    <footer>
+      <ng-content select=".tr-footer"></ng-content>
+    </footer>
+
+  </div>
+
+</main>
+{{ check() }}

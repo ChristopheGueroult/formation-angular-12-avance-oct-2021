@@ -1,0 +1,11 @@
+<app-ui>
+  <app-icon-nav class="tr-btn-open"></app-icon-nav>
+  <app-icon-close class="tr-btn-close"></app-icon-close>
+  <!-- ici dans le dom ui component html on projette un ensemble d'elements à l'aide de plusieurs ng-content  -->
+  <app-header class="tr-header"></app-header>
+  <app-nav class="tr-nav"></app-nav>
+  <app-footer class="tr-footer"></app-footer>
+  <router-outlet class="tr-content"></router-outlet>
+  <!-- projection d'un component qui correspond à une route -->
+</app-ui>
+{{ check() }}

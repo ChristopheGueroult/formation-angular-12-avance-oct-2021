@@ -1,0 +1,32 @@
+<app-gabarit-full-width [title]="title" *ngIf="collection$ | async as collection">
+
+  <div class="tr-left table-responsive">
+    <app-table-light [headers]="headers">
+      <tr *ngFor="let item of collection">
+        <td>
+          <app-icon-edit (click)="goToEdit(item.id, 'List Orders and Edit an Order')"></app-icon-edit>
+          <app-icon-delete (click)="deleteItem(item.id)"></app-icon-delete>
+        </td>
+        <td>{{ item.type }}</td>
+        <td>{{ item.client | uppercase }}</td>
+        <td>{{ item.nb_days }}</td>
+        <td>{{ item.tjm_ht | currency }}</td>
+        <td>{{ item.tjm_ht | total: item.nb_days | currency }}</td>
+        <td>{{ item.tjm_ht | total: item.nb_days: item.taux_tva | currency }}</td>
+        <td [appState]="item.state">
+          <select (change)="changeState(item, $event)">
+            <option *ngFor="let state of states" [value]="state" [selected]="state === item.state">{{ state }}
+            </option>
+          </select>
+        </td>
+      </tr>
+    </app-table-light>
+    <app-btn route="add" text="Add order" (click)="setTitle('List Orders and Add an Order')"></app-btn>
+  </div>
+
+  <router-outlet class="tr-right"></router-outlet>
+  <!-- tous les components qui correspondent à des routes enfant qui seront instanciés ou détruits dans le DOM -->
+
+
+</app-gabarit-full-width>
+{{ check() }}

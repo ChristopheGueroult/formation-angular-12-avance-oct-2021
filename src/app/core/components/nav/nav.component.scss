@@ -1,0 +1,7 @@
+a {
+  color: var(--app-primary);
+}
+a:hover,
+.active {
+  color: var(--app-primary-dark);
+}

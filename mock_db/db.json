@@ -1,0 +1,60 @@
+{
+  "orders": [
+    {
+      "taux_tva": 20,
+      "nb_days": 3,
+      "tjm_ht": 1200,
+      "state": "CONFIRMED",
+      "id": 1,
+      "type": "formation",
+      "client": "Betclic",
+      "comment": "un comment"
+    },
+    {
+      "taux_tva": 20,
+      "nb_days": 1,
+      "tjm_ht": 1200,
+      "state": "OPTION",
+      "id": 2,
+      "type": "formation",
+      "client": "sfdgsdgf",
+      "comment": null
+    },
+    {
+      "taux_tva": 20,
+      "nb_days": 1,
+      "tjm_ht": 1200,
+      "state": "OPTION",
+      "id": 3,
+      "type": "dsfrg",
+      "client": "dsfhg",
+      "comment": null
+    }
+  ],
+  "clients": [
+    {
+      "state": "INACTIVE",
+      "taux_tva": 20,
+      "total_ca_ht": 120000,
+      "id": 1,
+      "name": "Capgemini",
+      "email": "test@test.fr"
+    },
+    {
+      "state": "ACTIVE",
+      "taux_tva": 20,
+      "id": 2,
+      "name": "Betclic",
+      "total_ca_ht": 100000,
+      "email": "test2@test.fr"
+    },
+    {
+      "id": 3,
+      "name": "Test2",
+      "email": "test@gmail.com",
+      "total_ca_ht": 100000,
+      "taux_tva": 20,
+      "state": "ACTIVE"
+    }
+  ]
+}
