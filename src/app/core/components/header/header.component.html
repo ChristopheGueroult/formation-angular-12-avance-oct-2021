@@ -3,5 +3,13 @@
     <img src="../../../../assets/img/70610.jpg" alt="">
   </div>
   <h1>So Cute Nikki'S Crm</h1>
+  <div class="connect">
+    <div *ngIf="currentUser$ | async as currentUser; else elseBlock">
+      <span>Welcome {{ currentUser.username }}</span>
+      <button (click)="logout()">Logout</button>
+    </div>
+    <ng-template #elseBlock>
+      <span>Welcome</span>
+    </ng-template>
+  </div>
 </div>
-{{ check() }}

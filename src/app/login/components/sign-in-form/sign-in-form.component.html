@@ -1,0 +1,26 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input formControlName="username" type="text" class="form-control" id="username"
+      [ngClass]="{'is-invalid': fields.username.errors && fields.username.touched }">
+    <div class="invalid-feedback">
+      Username requis
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input formControlName="password" type="text" class="form-control" id="password"
+      [ngClass]="{'is-invalid': fields.password.errors && fields.password.touched }">
+    <div class="invalid-feedback">
+      Password requis
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
+    <a routerLink="/sign-up" class="btn btn-link">Register</a>
+  </div>
+
+</form>

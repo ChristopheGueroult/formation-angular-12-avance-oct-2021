@@ -1,0 +1,44 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input formControlName="firstName" type="text" class="form-control" id="firstName"
+      [ngClass]="{'is-invalid': fields.firstName.errors && fields.firstName.touched }">
+    <div class="invalid-feedback">
+      First Name required
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input formControlName="lastName" type="text" class="form-control" id="lastName"
+      [ngClass]="{'is-invalid': fields.lastName.errors && fields.lastName.touched }">
+    <div class="invalid-feedback">
+      Last Name required
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input formControlName="username" type="text" class="form-control" id="username"
+      [ngClass]="{'is-invalid': fields.username.errors && fields.username.touched }">
+    <div class="invalid-feedback">
+      Username required
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input formControlName="password" type="text" class="form-control" id="password"
+      [ngClass]="{'is-invalid': fields.password.errors && fields.password.touched }">
+    <div class="invalid-feedback">
+      Password required
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Login</button>
+    <a routerLink="/sign-in" class="btn btn-link">Connection</a>
+  </div>
+
+</form>
