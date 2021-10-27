@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { Order } from 'src/app/core/models/order';
-import { OrdersService } from 'src/app/core/services/orders.service';
+import { tryAddtOrderAction } from 'src/app/core/store/orders-store/actions/oreders.actions';
 
 @Component({
   selector: 'app-page-add-order',
@@ -10,18 +10,11 @@ import { OrdersService } from 'src/app/core/services/orders.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PageAddOrderComponent implements OnInit {
-  constructor(
-    private ordersService: OrdersService,
-    private router: Router,
-    private route: ActivatedRoute
-  ) {}
+  constructor(private store: Store) {}
 
   ngOnInit(): void {}
-  action(item: Order): void {
-    this.ordersService.add(item).subscribe((res) => {
-      // this.router.navigate(['orders']);
-      this.router.navigate(['../'], { relativeTo: this.route });
-    });
+  public action(item: Order): void {
+    this.store.dispatch(tryAddtOrderAction({ order: item }));
   }
 
   check() {

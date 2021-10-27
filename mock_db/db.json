@@ -29,6 +29,16 @@
       "type": "dsfrg",
       "client": "dsfhg",
       "comment": null
+    },
+    {
+      "taux_tva": 20,
+      "nb_days": 1,
+      "tjm_ht": 1200,
+      "state": "OPTION",
+      "id": 4,
+      "type": "vchn",
+      "client": "dfgh",
+      "comment": null
     }
   ],
   "clients": [

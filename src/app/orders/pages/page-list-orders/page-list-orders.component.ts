@@ -1,14 +1,10 @@
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
+import { Store } from '@ngrx/store';
 import { StateOrder } from 'src/app/core/enums/state-order';
 import { Order } from 'src/app/core/models/order';
-import { OrdersService } from 'src/app/core/services/orders.service';
+import { tryGetAllOrdersAction } from 'src/app/core/store/orders-store/actions/oreders.actions';
+import { selectAllOrders } from 'src/app/core/store/orders-store/selectors/selectors.orders';
 
 @Component({
   selector: 'app-page-list-orders',
@@ -19,21 +15,11 @@ import { OrdersService } from 'src/app/core/services/orders.service';
 export class PageListOrdersComponent implements OnInit {
   public title = 'List orders and Add an Order';
   public headers: string[];
-  // public collection!: Order[];
-  public collection$: Subject<Order[]>;
+  public collection$ = this.store.select(selectAllOrders);
   public states = Object.values(StateOrder);
-  // private sub: Subscription;
-  constructor(
-    private ordersService: OrdersService,
-    private router: Router,
-    private cd: ChangeDetectorRef
-  ) {
-    this.ordersService.refreshCollection();
-    this.collection$ = this.ordersService.collection;
-    // this.ordersService.collection.subscribe((data) => {
-    //   this.collection = data;
-    //   this.cd.markForCheck();
-    // });
+
+  constructor(private router: Router, private store: Store) {
+    this.store.dispatch(tryGetAllOrdersAction());
     this.headers = [
       'Action',
       'Type',
@@ -51,21 +37,18 @@ export class PageListOrdersComponent implements OnInit {
   }
   changeState(item: Order, event: any): void {
     const state = event.target.value;
-    this.ordersService.changeState(item, state).subscribe((res) => {
-      Object.assign(item, res);
-    });
+    // this.ordersService.changeState(item, state).subscribe((res) => {
+    //   Object.assign(item, res);
+    // });
   }
   public goToEdit(id: number, title: string): void {
     this.router.navigate(['orders', 'edit', id]);
     this.title = title;
   }
   public deleteItem(id: number): void {
-    this.ordersService.delete(id).subscribe();
+    // this.ordersService.delete(id).subscribe();
   }
   public setTitle(title: string): void {
     this.title = title;
-  }
-  check() {
-    console.log('CD PAGE LIST ORDERS');
   }
 }
