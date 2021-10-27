@@ -11,3 +11,23 @@ export const selectAllOrders = createSelector(
     return state.orders;
   }
 );
+
+// export const selectOrder = createSelector(
+//   selectAllOrders,
+//   selectRouteParams,
+//   (orders: Order[], params: Params) => {
+//     const id = params['id'];
+//     if (id && orders.length) {
+//       return orders.find((item) => item.id === Number(id));
+//     } else {
+//       return null;
+//     }
+//   }
+// );
+
+export const selectOrder = createSelector(
+  selectOrdersFeature,
+  (state: OrdersState): Order | null => {
+    return state.selectedOrder;
+  }
+);

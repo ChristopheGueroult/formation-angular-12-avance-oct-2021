@@ -4,9 +4,9 @@
       "taux_tva": 20,
       "nb_days": 3,
       "tjm_ht": 1200,
-      "state": "CONFIRMED",
+      "state": "CANCELED",
       "id": 1,
-      "type": "formation",
+      "type": "formation2",
       "client": "Betclic",
       "comment": "un comment"
     },
@@ -28,16 +28,6 @@
       "id": 3,
       "type": "dsfrg",
       "client": "dsfhg",
-      "comment": null
-    },
-    {
-      "taux_tva": 20,
-      "nb_days": 1,
-      "tjm_ht": 1200,
-      "state": "OPTION",
-      "id": 4,
-      "type": "vchn",
-      "client": "dfgh",
       "comment": null
     }
   ],
