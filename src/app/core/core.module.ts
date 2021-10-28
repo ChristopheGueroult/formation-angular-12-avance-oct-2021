@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 import { GabaritsPagesModule } from '../gabarits-pages/gabarits-pages.module';
 import { IconsModule } from '../icons/icons.module';
 import { LoginModule } from '../login/login.module';
@@ -12,7 +12,7 @@ import { NavComponent } from './components/nav/nav.component';
 
 @NgModule({
   declarations: [HeaderComponent, NavComponent, FooterComponent],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, TranslateModule],
   exports: [
     UiModule,
     LoginModule,

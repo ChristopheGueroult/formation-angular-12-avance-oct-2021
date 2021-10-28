@@ -2,10 +2,10 @@
   <div class="logo">
     <img src="../../../../assets/img/70610.jpg" alt="">
   </div>
-  <h1>So Cute Nikki'S Crm</h1>
+  <h1>{{ 'header.title' | translate }}</h1>
   <div class="connect">
     <div *ngIf="currentUser$ | async as currentUser; else elseBlock">
-      <span>Welcome {{ currentUser.username }}</span>
+      <span> {{ 'header.welcomText' | translate: { name:currentUser.username } }}</span>
       <button (click)="logout()">Logout</button>
     </div>
     <ng-template #elseBlock>

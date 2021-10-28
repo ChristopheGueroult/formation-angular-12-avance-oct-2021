@@ -8,6 +8,7 @@ import { StateDirective } from './directives/state.directive';
 import { GabaritsPagesModule } from '../gabarits-pages/gabarits-pages.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IconsModule } from '../icons/icons.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [TableLightComponent, BtnComponent, TotalPipe, StateDirective],
@@ -20,6 +21,7 @@ import { IconsModule } from '../icons/icons.module';
     GabaritsPagesModule,
     ReactiveFormsModule,
     IconsModule,
+    TranslateModule
   ],
 })
 export class SharedModule {}
