@@ -8,6 +8,11 @@
   <li class="nav-item">
     {{ version }}
   </li>
+  <li class="nav-item">
+    <select (change)="changeLang($event)">
+      <option *ngFor="let lang of langs" [value]="lang" [selected]="lang === newLang">{{ lang }}</option>
+    </select>
+  </li>
 </ul>
 <button (click)="increment()">increment</button>
 {{ check() }}

@@ -14,8 +14,7 @@ export class HeaderComponent implements OnInit {
   public currentUser$!: Observable<User>;
   constructor(
     private authService: AuthenticationService,
-    private router: Router,
-    
+    private router: Router
   ) {
     this.currentUser$ = this.authService.currentUser$;
   }
