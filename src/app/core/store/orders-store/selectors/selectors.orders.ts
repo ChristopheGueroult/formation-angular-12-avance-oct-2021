@@ -32,9 +32,3 @@ export const selectOrder = createSelector(
   }
 );
 
-export const selectOpenSidebar = createSelector(
-  selectOrdersFeature,
-  (state: OrdersState): boolean => {
-    return state.openSideBar;
-  }
-);

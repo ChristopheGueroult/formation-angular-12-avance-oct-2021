@@ -1,6 +1,7 @@
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DEFAULT_CURRENCY_CODE, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -12,7 +13,6 @@ import { fakeBackendProvider } from './core/helpers/fake-backend';
 import { ErrorsInterceptor } from './core/interceptors/errors.interceptor';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { rootReducers } from './core/store';
-import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [AppComponent],

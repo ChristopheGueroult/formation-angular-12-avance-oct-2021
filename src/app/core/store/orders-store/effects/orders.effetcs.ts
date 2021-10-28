@@ -1,4 +1,3 @@
-import { Location } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
@@ -16,7 +15,6 @@ import {
   errorAction,
   getAllOrdersSuccessAction,
   getOrderSuccessAction,
-  toggleSideBarAction,
   tryAddtOrderAction,
   tryDeleteOrderAction,
   tryGetAllOrdersAction,
@@ -31,8 +29,7 @@ export class OrdersEffects {
     private actions$: Actions,
     private ordersService: OrdersService,
     private store: Store,
-    private router: Router,
-    private location: Location
+    private router: Router
   ) {}
 
   getAllOrdersEffect$ = createEffect(() =>
@@ -124,25 +121,6 @@ export class OrdersEffects {
         } else {
           return errorAction({ error: null });
         }
-      })
-    )
-  );
-
-  isRouteAddEffect$ = createEffect(() =>
-    this.store.select(selectUrl).pipe(
-      // filter((route: string) => {
-      //   return !!route && route.includes('orders/add');
-      // }),
-      map((route: string) => {
-        console.log(route);
-        if (
-          (route && route.includes('orders/add')) ||
-          (route && route.includes('orders/edit'))
-        ) {
-          console.log(route);
-          return toggleSideBarAction({ open: true });
-        }
-        return toggleSideBarAction({ open: false });
       })
     )
   );
