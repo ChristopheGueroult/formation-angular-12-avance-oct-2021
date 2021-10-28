@@ -16,7 +16,7 @@
       "tjm_ht": 1200,
       "state": "OPTION",
       "id": 2,
-      "type": "formation",
+      "type": "formation1",
       "client": "sfdgsdgf",
       "comment": null
     },
@@ -28,6 +28,16 @@
       "id": 3,
       "type": "dsfrg",
       "client": "dsfhg",
+      "comment": null
+    },
+    {
+      "taux_tva": 20,
+      "nb_days": 1,
+      "tjm_ht": 1200,
+      "state": "OPTION",
+      "id": 4,
+      "type": "formation",
+      "client": "fdghdfdhg",
       "comment": null
     }
   ],

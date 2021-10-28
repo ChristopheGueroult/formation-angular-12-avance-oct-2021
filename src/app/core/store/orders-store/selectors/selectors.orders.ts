@@ -1,5 +1,7 @@
+import { Params } from '@angular/router';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { Order } from 'src/app/core/models/order';
+import { selectRouteParams } from '../../router.reducer';
 import { ordersFeatureKey, OrdersState } from '../reducer/orders.reducer';
 
 export const selectOrdersFeature =
@@ -12,18 +14,18 @@ export const selectAllOrders = createSelector(
   }
 );
 
-// export const selectOrder = createSelector(
-//   selectAllOrders,
-//   selectRouteParams,
-//   (orders: Order[], params: Params) => {
-//     const id = params['id'];
-//     if (id && orders.length) {
-//       return orders.find((item) => item.id === Number(id));
-//     } else {
-//       return null;
-//     }
-//   }
-// );
+export const selectOrder2 = createSelector(
+  selectAllOrders,
+  selectRouteParams,
+  (orders: Order[], params: Params) => {
+    const id = params['id'];
+    if (id && orders.length) {
+      return orders.find((item) => item.id === Number(id));
+    } else {
+      return null;
+    }
+  }
+);
 
 export const selectOrder = createSelector(
   selectOrdersFeature,

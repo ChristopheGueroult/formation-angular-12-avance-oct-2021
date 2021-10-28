@@ -13,16 +13,12 @@ export interface OrdersState {
   orders: Order[];
   error: any;
   selectedOrder: Order | null;
-  openSideBar: boolean;
-  prevUrl: string | null;
 }
 
 export const initiaOrdersState: OrdersState = {
   orders: [],
   error: null,
   selectedOrder: null,
-  openSideBar: false,
-  prevUrl: null,
 };
 
 export const ordersFeatureKey = 'orders';
@@ -70,8 +66,6 @@ export const ordersReducer = createReducer(
   on(
     getOrderSuccessAction,
     (state: OrdersState, { order }: { order: Order }): OrdersState => {
-      console.log('reducer called');
-
       return {
         ...state,
         selectedOrder: order,
