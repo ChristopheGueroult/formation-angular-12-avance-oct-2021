@@ -17,6 +17,7 @@ import { selectAllOrders } from 'src/app/core/store/orders-store/selectors/selec
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PageListOrdersComponent implements OnInit {
+  public openForm = false;
   public title = 'List orders and Add an Order';
   public headers: string[];
   public collection$ = this.store.select(selectAllOrders);

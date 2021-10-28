@@ -31,3 +31,10 @@ export const selectOrder = createSelector(
     return state.selectedOrder;
   }
 );
+
+export const selectOpenSidebar = createSelector(
+  selectOrdersFeature,
+  (state: OrdersState): boolean => {
+    return state.openSideBar;
+  }
+);

@@ -1,9 +1,5 @@
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { NavService } from '../../services/nav.service';
 import { VersionService } from '../../services/version.service';
 
 @Component({
@@ -16,7 +12,7 @@ export class NavComponent implements OnInit {
   public version!: number;
   constructor(
     private versionServ: VersionService,
-    private cd: ChangeDetectorRef
+    private navService: NavService
   ) {
     this.versionServ.numVersion.subscribe((data) => {
       this.version = data;
@@ -26,6 +22,9 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {}
   increment(): void {
     this.versionServ.increment();
+  }
+  public toggle() {
+    this.navService.toggle();
   }
   check() {
     console.log('CD NAV');

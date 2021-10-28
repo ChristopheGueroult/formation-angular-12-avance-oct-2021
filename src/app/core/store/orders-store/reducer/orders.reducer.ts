@@ -13,12 +13,14 @@ export interface OrdersState {
   orders: Order[];
   error: any;
   selectedOrder: Order | null;
+  openSideBar: boolean;
 }
 
 export const initiaOrdersState: OrdersState = {
   orders: [],
   error: null,
   selectedOrder: null,
+  openSideBar: false,
 };
 
 export const ordersFeatureKey = 'orders';
@@ -83,4 +85,13 @@ export const ordersReducer = createReducer(
       };
     }
   )
+  // on(
+  //   toggleSideBarAction,
+  //   (state: OrdersState, { open }: { open: boolean }): OrdersState => {
+  //     return {
+  //       ...state,
+  //       openSideBar: open,
+  //     };
+  //   }
+  // )
 );

@@ -4,6 +4,8 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { selectOpenSidebar } from 'src/app/core/store/orders-store/selectors/selectors.orders';
 
 @Component({
   selector: 'app-gabarit-full-width',
@@ -13,10 +15,12 @@ import {
 })
 export class GabaritFullWidthComponent implements OnInit {
   @Input() title!: string;
-  constructor() {}
+  public open$ = this.store.select(selectOpenSidebar);
+  constructor(private store: Store) {}
 
   ngOnInit(): void {}
   check() {
     console.log('CD GABARIT FULL WIDTH');
   }
+  close() {}
 }

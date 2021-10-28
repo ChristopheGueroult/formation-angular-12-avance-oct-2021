@@ -4,7 +4,7 @@
       "taux_tva": 20,
       "nb_days": 3,
       "tjm_ht": 1200,
-      "state": "CANCELED",
+      "state": "CONFIRMED",
       "id": 1,
       "type": "formation2",
       "client": "Betclic",

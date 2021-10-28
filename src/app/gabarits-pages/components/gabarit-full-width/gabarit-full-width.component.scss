@@ -6,3 +6,26 @@
     margin: 0;
   }
 }
+
+.my-flex {
+  display: flex;
+  .tab {
+    overflow: auto;
+    flex-grow: 1;
+  }
+  .form {
+    position: fixed;
+    top: 85px;
+    right: 0;
+    width: 500px;
+    background: #fff;
+    overflow: hidden;
+    height: calc(100vh - 85px);
+    div {
+      overflow: auto;
+      height: 100%;
+      padding: 30px;
+    }
+  }
+
+}

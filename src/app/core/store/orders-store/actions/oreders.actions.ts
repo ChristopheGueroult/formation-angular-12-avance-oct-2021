@@ -60,3 +60,9 @@ export const errorAction = createAction(
   '[Orders] error orders',
   props<{ error: any }>()
 );
+
+export const toggleSideBarAction = createAction(
+  '[Orders] toggle sidebar',
+  props<{ open: boolean }>()
+);
+

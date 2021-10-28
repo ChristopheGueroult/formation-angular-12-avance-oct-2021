@@ -1,4 +1,6 @@
+import { Location } from '@angular/common';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { of } from 'rxjs';
@@ -14,6 +16,7 @@ import {
   errorAction,
   getAllOrdersSuccessAction,
   getOrderSuccessAction,
+  toggleSideBarAction,
   tryAddtOrderAction,
   tryDeleteOrderAction,
   tryGetAllOrdersAction,
@@ -27,7 +30,9 @@ export class OrdersEffects {
   constructor(
     private actions$: Actions,
     private ordersService: OrdersService,
-    private store: Store
+    private store: Store,
+    private router: Router,
+    private location: Location
   ) {}
 
   getAllOrdersEffect$ = createEffect(() =>
@@ -59,7 +64,10 @@ export class OrdersEffects {
       ofType(tryUpdateOrderAction),
       switchMap(({ order }: { order: Order }) =>
         this.ordersService.update(order).pipe(
-          map((order: Order) => updateOrderSuccessAction({ order })),
+          map((order: Order) => {
+            this.router.navigate(['/orders']);
+            return updateOrderSuccessAction({ order });
+          }),
           catchError((error) => of(errorAction({ error })))
         )
       )
@@ -112,12 +120,29 @@ export class OrdersEffects {
       }),
       map((id) => {
         if (id) {
-          console.log(id);
-
           return trygetOrderAction({ id: Number(id) });
         } else {
           return errorAction({ error: null });
         }
+      })
+    )
+  );
+
+  isRouteAddEffect$ = createEffect(() =>
+    this.store.select(selectUrl).pipe(
+      // filter((route: string) => {
+      //   return !!route && route.includes('orders/add');
+      // }),
+      map((route: string) => {
+        console.log(route);
+        if (
+          (route && route.includes('orders/add')) ||
+          (route && route.includes('orders/edit'))
+        ) {
+          console.log(route);
+          return toggleSideBarAction({ open: true });
+        }
+        return toggleSideBarAction({ open: false });
       })
     )
   );

@@ -7,11 +7,6 @@ import { PageListOrdersComponent } from './pages/page-list-orders/page-list-orde
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'add',
-    pathMatch: 'full',
-  },
-  {
-    path: '',
     component: PageListOrdersComponent,
     children: [
       {

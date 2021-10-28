@@ -2,12 +2,15 @@
   <h1>{{ title }}</h1>
 </div>
 
-<div class="row">
-  <div class="col-12 col-md-8">
+<div class="my-flex">
+  <div class="tab">
     <ng-content select=".tr-left"></ng-content>
   </div>
-  <div class="col-12 col-md-4">
-    <ng-content select=".tr-right"></ng-content>
+  <div class="form" *ngIf="open$ | async">
+    <div>
+      <button (click)="close()">Exit</button>
+      <ng-content select=".tr-right"></ng-content>
+    </div>
   </div>
 </div>
 {{ check() }}

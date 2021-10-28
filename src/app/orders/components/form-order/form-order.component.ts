@@ -24,16 +24,18 @@ export class FormOrderComponent implements OnInit {
     this.init = new Order();
   }
   ngOnChanges() {
-    this.form.setValue({
-      taux_tva: this.init.taux_tva,
-      nb_days: this.init.nb_days,
-      tjm_ht: this.init.tjm_ht,
-      state: this.init.state,
-      id: this.init.id,
-      type: this.init.type,
-      client: this.init.client,
-      comment: this.init.comment,
-    });
+    if (this.form) {
+      this.form.setValue({
+        taux_tva: this.init?.taux_tva,
+        nb_days: this.init?.nb_days,
+        tjm_ht: this.init?.tjm_ht,
+        state: this.init?.state,
+        id: this.init?.id,
+        type: this.init?.type,
+        client: this.init?.client,
+        comment: this.init?.comment,
+      });
+    }
   }
   ngOnInit(): void {
     this.form = this.fb.group({
