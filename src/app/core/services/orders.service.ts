@@ -6,12 +6,21 @@ import { environment } from 'src/environments/environment';
 import { AbstractErrorHandler } from '../abstract/abstract-error-handler';
 import { StateOrder } from '../enums/state-order';
 import { Order } from '../models/order';
-
+/**
+ * @description
+ * this service manage collection orders
+ */
 @Injectable({
   providedIn: 'root',
 })
 export class OrdersService extends AbstractErrorHandler {
+  /**
+   * Observable collection$ to return collection orders
+   */
   private collection$!: Observable<Order[]>;
+  /**
+   * variable to get urlApi from environment
+   */
   private urlApi = environment.urlApi;
   constructor(private http: HttpClient) {
     super();
@@ -20,17 +29,26 @@ export class OrdersService extends AbstractErrorHandler {
       .pipe(catchError(this.handleError));
   }
 
-  // get collection
+  /**
+   * getter to return collection orders
+   */
   get collection(): Observable<Order[]> {
     return this.collection$;
   }
 
-  // set collection
+  /**
+   * setter to initialize collection orders
+   */
   set collection(col: Observable<Order[]>) {
     this.collection$ = col;
   }
 
-  // change state item
+  /**
+   *
+   * @param item get the order on witch we want to change state
+   * @param state new state choose by user for an order
+   * @returns return method to update order in collection
+   */
   public changeState(item: Order, state: StateOrder): Observable<Order> {
     const obj = new Order(item);
     obj.state = state;

@@ -280,9 +280,9 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CommonModule } from &#x27;@angular/common&#x27;;
-import { HttpClientModule } from &#x27;@angular/common/http&#x27;;
 import { NgModule } from &#x27;@angular/core&#x27;;
 import { RouterModule } from &#x27;@angular/router&#x27;;
+import { TranslateModule } from &#x27;@ngx-translate/core&#x27;;
 import { GabaritsPagesModule } from &#x27;../gabarits-pages/gabarits-pages.module&#x27;;
 import { IconsModule } from &#x27;../icons/icons.module&#x27;;
 import { LoginModule } from &#x27;../login/login.module&#x27;;
@@ -293,7 +293,7 @@ import { NavComponent } from &#x27;./components/nav/nav.component&#x27;;
 
 @NgModule({
   declarations: [HeaderComponent, NavComponent, FooterComponent],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, TranslateModule],
   exports: [
     UiModule,
     LoginModule,

@@ -1,0 +1,656 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>crm documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">crm documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li >OrdersEffects</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/core/store/orders-store/effects/orders.effetcs.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addOrderEffect$" >addOrderEffect$</a>
+                            </li>
+                            <li>
+                                <a href="#changeStateEffect$" >changeStateEffect$</a>
+                            </li>
+                            <li>
+                                <a href="#deleteOrderEffect$" >deleteOrderEffect$</a>
+                            </li>
+                            <li>
+                                <a href="#editIdChange$" >editIdChange$</a>
+                            </li>
+                            <li>
+                                <a href="#getAllOrdersEffect$" >getAllOrdersEffect$</a>
+                            </li>
+                            <li>
+                                <a href="#getOrderEffect$" >getOrderEffect$</a>
+                            </li>
+                            <li>
+                                <a href="#updateOrderEffect$" >updateOrderEffect$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(actions$: Actions, ordersService: <a href="../injectables/OrdersService.html" target="_self">OrdersService</a>, store: Store, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/core/store/orders-store/effects/orders.effetcs.ts:27</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>actions$</td>
+                                                  
+                                                        <td>
+                                                                    <code>Actions</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>ordersService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/OrdersService.html" target="_self" >OrdersService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                    <code>Store</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addOrderEffect$"></a>
+                    <span class="name">
+                        <span ><b>addOrderEffect$</b></span>
+                        <a href="#addOrderEffect$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(tryAddtOrderAction),
+      switchMap(({ order }: { order: Order }) &#x3D;&gt;
+        this.ordersService.add(order).pipe(
+          map((order: Order) &#x3D;&gt; addOrderSuccessAction({ order })),
+          catchError((error) &#x3D;&gt; of(errorAction({ error })))
+        )
+      )
+    )
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/core/store/orders-store/effects/orders.effetcs.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeStateEffect$"></a>
+                    <span class="name">
+                        <span ><b>changeStateEffect$</b></span>
+                        <a href="#changeStateEffect$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(changeStateAction),
+      switchMap(({ order, state }: { order: Order; state: StateOrder }) &#x3D;&gt;
+        this.ordersService.changeState(order, state).pipe(
+          map((order: Order) &#x3D;&gt; updateOrderSuccessAction({ order })),
+          catchError((error) &#x3D;&gt; of(errorAction({ error })))
+        )
+      )
+    )
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/core/store/orders-store/effects/orders.effetcs.ts:74</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteOrderEffect$"></a>
+                    <span class="name">
+                        <span ><b>deleteOrderEffect$</b></span>
+                        <a href="#deleteOrderEffect$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(tryDeleteOrderAction),
+      switchMap(({ id }: { id: number }) &#x3D;&gt;
+        this.ordersService.delete(id).pipe(
+          map(() &#x3D;&gt; deleteOrderSuccessAction({ id })),
+          catchError((error) &#x3D;&gt; of(errorAction({ error })))
+        )
+      )
+    )
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/app/core/store/orders-store/effects/orders.effetcs.ts:86</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editIdChange$"></a>
+                    <span class="name">
+                        <span ><b>editIdChange$</b></span>
+                        <a href="#editIdChange$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.store.select(selectUrl).pipe(
+      filter((route: string) &#x3D;&gt; {
+        return !!route &amp;&amp; route.includes(&#x27;orders/edit&#x27;);
+      }),
+      switchMap(() &#x3D;&gt; {
+        return this.store.select(selectRouteParam(&#x27;id&#x27;));
+      }),
+      map((id) &#x3D;&gt; {
+        if (id) {
+          return trygetOrderAction({ id: Number(id) });
+        } else {
+          return errorAction({ error: null });
+        }
+      })
+    )
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="110" class="link-to-prism">src/app/core/store/orders-store/effects/orders.effetcs.ts:110</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAllOrdersEffect$"></a>
+                    <span class="name">
+                        <span ><b>getAllOrdersEffect$</b></span>
+                        <a href="#getAllOrdersEffect$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(tryGetAllOrdersAction),
+      switchMap(() &#x3D;&gt;
+        this.ordersService.collection.pipe(
+          map((orders: Order[]) &#x3D;&gt; getAllOrdersSuccessAction({ orders })),
+          catchError((error) &#x3D;&gt; of(errorAction({ error })))
+        )
+      )
+    )
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/core/store/orders-store/effects/orders.effetcs.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getOrderEffect$"></a>
+                    <span class="name">
+                        <span ><b>getOrderEffect$</b></span>
+                        <a href="#getOrderEffect$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(trygetOrderAction),
+      switchMap(({ id }: { id: number }) &#x3D;&gt;
+        this.ordersService.getItemById(id).pipe(
+          map((order: Order) &#x3D;&gt; getOrderSuccessAction({ order })),
+          catchError((error) &#x3D;&gt; of(errorAction({ error })))
+        )
+      )
+    )
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/app/core/store/orders-store/effects/orders.effetcs.ts:98</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateOrderEffect$"></a>
+                    <span class="name">
+                        <span ><b>updateOrderEffect$</b></span>
+                        <a href="#updateOrderEffect$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(tryUpdateOrderAction),
+      switchMap(({ order }: { order: Order }) &#x3D;&gt;
+        this.ordersService.update(order).pipe(
+          map((order: Order) &#x3D;&gt; {
+            this.router.navigate([&#x27;/orders&#x27;]);
+            return updateOrderSuccessAction({ order });
+          }),
+          catchError((error) &#x3D;&gt; of(errorAction({ error })))
+        )
+      )
+    )
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/core/store/orders-store/effects/orders.effetcs.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { Actions, createEffect, ofType } from &#x27;@ngrx/effects&#x27;;
+import { Store } from &#x27;@ngrx/store&#x27;;
+import { of } from &#x27;rxjs&#x27;;
+import { catchError, filter, map, switchMap } from &#x27;rxjs/operators&#x27;;
+import { StateOrder } from &#x27;src/app/core/enums/state-order&#x27;;
+import { Order } from &#x27;src/app/core/models/order&#x27;;
+import { OrdersService } from &#x27;src/app/core/services/orders.service&#x27;;
+import { selectRouteParam, selectUrl } from &#x27;../../router.reducer&#x27;;
+import {
+  addOrderSuccessAction,
+  changeStateAction,
+  deleteOrderSuccessAction,
+  errorAction,
+  getAllOrdersSuccessAction,
+  getOrderSuccessAction,
+  tryAddtOrderAction,
+  tryDeleteOrderAction,
+  tryGetAllOrdersAction,
+  trygetOrderAction,
+  tryUpdateOrderAction,
+  updateOrderSuccessAction,
+} from &#x27;../actions/oreders.actions&#x27;;
+
+@Injectable()
+export class OrdersEffects {
+  constructor(
+    private actions$: Actions,
+    private ordersService: OrdersService,
+    private store: Store,
+    private router: Router
+  ) {}
+
+  getAllOrdersEffect$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(tryGetAllOrdersAction),
+      switchMap(() &#x3D;&gt;
+        this.ordersService.collection.pipe(
+          map((orders: Order[]) &#x3D;&gt; getAllOrdersSuccessAction({ orders })),
+          catchError((error) &#x3D;&gt; of(errorAction({ error })))
+        )
+      )
+    )
+  );
+
+  addOrderEffect$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(tryAddtOrderAction),
+      switchMap(({ order }: { order: Order }) &#x3D;&gt;
+        this.ordersService.add(order).pipe(
+          map((order: Order) &#x3D;&gt; addOrderSuccessAction({ order })),
+          catchError((error) &#x3D;&gt; of(errorAction({ error })))
+        )
+      )
+    )
+  );
+
+  updateOrderEffect$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(tryUpdateOrderAction),
+      switchMap(({ order }: { order: Order }) &#x3D;&gt;
+        this.ordersService.update(order).pipe(
+          map((order: Order) &#x3D;&gt; {
+            this.router.navigate([&#x27;/orders&#x27;]);
+            return updateOrderSuccessAction({ order });
+          }),
+          catchError((error) &#x3D;&gt; of(errorAction({ error })))
+        )
+      )
+    )
+  );
+
+  changeStateEffect$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(changeStateAction),
+      switchMap(({ order, state }: { order: Order; state: StateOrder }) &#x3D;&gt;
+        this.ordersService.changeState(order, state).pipe(
+          map((order: Order) &#x3D;&gt; updateOrderSuccessAction({ order })),
+          catchError((error) &#x3D;&gt; of(errorAction({ error })))
+        )
+      )
+    )
+  );
+
+  deleteOrderEffect$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(tryDeleteOrderAction),
+      switchMap(({ id }: { id: number }) &#x3D;&gt;
+        this.ordersService.delete(id).pipe(
+          map(() &#x3D;&gt; deleteOrderSuccessAction({ id })),
+          catchError((error) &#x3D;&gt; of(errorAction({ error })))
+        )
+      )
+    )
+  );
+
+  getOrderEffect$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(trygetOrderAction),
+      switchMap(({ id }: { id: number }) &#x3D;&gt;
+        this.ordersService.getItemById(id).pipe(
+          map((order: Order) &#x3D;&gt; getOrderSuccessAction({ order })),
+          catchError((error) &#x3D;&gt; of(errorAction({ error })))
+        )
+      )
+    )
+  );
+
+  editIdChange$ &#x3D; createEffect(() &#x3D;&gt;
+    this.store.select(selectUrl).pipe(
+      filter((route: string) &#x3D;&gt; {
+        return !!route &amp;&amp; route.includes(&#x27;orders/edit&#x27;);
+      }),
+      switchMap(() &#x3D;&gt; {
+        return this.store.select(selectRouteParam(&#x27;id&#x27;));
+      }),
+      map((id) &#x3D;&gt; {
+        if (id) {
+          return trygetOrderAction({ id: Number(id) });
+        } else {
+          return errorAction({ error: null });
+        }
+      })
+    )
+  );
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'OrdersEffects.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { VersionService } from '../../services/version.service';
-
+import * as dayjs from 'dayjs';
+import * as moment from 'moment';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -9,6 +10,8 @@ import { VersionService } from '../../services/version.service';
 })
 export class FooterComponent implements OnInit {
   public version!: number;
+  public date = moment().format('dd/mm/YYYY');
+  public date2 = dayjs().format('dd/mm/YYYY');
   constructor(private versionServ: VersionService) {
     this.versionServ.numVersion.subscribe((data) => {
       this.version = data;
@@ -16,7 +19,4 @@ export class FooterComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-  check() {
-    console.log('CD FOOTER');
-  }
 }

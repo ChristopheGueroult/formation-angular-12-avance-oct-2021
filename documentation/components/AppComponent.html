@@ -77,6 +77,10 @@
     <table class="table table-sm table-hover">
         <tbody>
 
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
 
 
 
@@ -134,6 +138,20 @@
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#check" >check</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -143,12 +161,102 @@
     </table>
 </section>
 
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(translateService: TranslateService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/app.component.ts:10</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>translateService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TranslateService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
 
 
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="check"></a>
+                    <span class="name">
+                        <span ><b>check</b></span>
+                        <a href="#check"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>check()</code>
+                </td>
+            </tr>
 
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">src/app/app.component.ts:15</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
     <section>
     
     <h3 id="inputs">
@@ -178,7 +286,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/app.component.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/app.component.ts:14</a></div>
                         </td>
                     </tr>
 
@@ -191,21 +299,30 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectionStrategy, Component } from &#x27;@angular/core&#x27;;
+import { TranslateService } from &#x27;@ngx-translate/core&#x27;;
 
 @Component({
   selector: &#x27;app-root&#x27;,
   templateUrl: &#x27;./app.component.html&#x27;,
-  styleUrls: [&#x27;./app.component.scss&#x27;]
+  styleUrls: [&#x27;./app.component.scss&#x27;],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
+  constructor(private translateService: TranslateService) {
+    this.translateService.setDefaultLang(&#x27;fr&#x27;);
+  }
   title &#x3D; &#x27;crm&#x27;;
+  check() {
+    console.log(&#x27;CD APP&#x27;);
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;app-ui&gt;
+  &lt;h1 class&#x3D;&quot;tr-header&quot;&gt;{{ title }}&lt;/h1&gt;
   &lt;app-icon-nav class&#x3D;&quot;tr-btn-open&quot;&gt;&lt;/app-icon-nav&gt;
   &lt;app-icon-close class&#x3D;&quot;tr-btn-close&quot;&gt;&lt;/app-icon-close&gt;
   &lt;!-- ici dans le dom ui component html on projette un ensemble d&#x27;elements à l&#x27;aide de plusieurs ng-content  --&gt;
@@ -215,6 +332,7 @@ export class AppComponent {
   &lt;router-outlet class&#x3D;&quot;tr-content&quot;&gt;&lt;/router-outlet&gt;
   &lt;!-- projection d&#x27;un component qui correspond à une route --&gt;
 &lt;/app-ui&gt;
+{{ check() }}
 </code></pre>
     </div>
 
@@ -250,8 +368,8 @@ export class AppComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-ui>  <app-icon-nav class="tr-btn-open"></app-icon-nav>  <app-icon-close class="tr-btn-close"></app-icon-close>  <!-- ici dans le dom ui component html on projette un ensemble d\'elements à l\'aide de plusieurs ng-content  -->  <app-header class="tr-header"></app-header>  <app-nav class="tr-nav"></app-nav>  <app-footer class="tr-footer"></app-footer>  <router-outlet class="tr-content"></router-outlet>  <!-- projection d\'un component qui correspond à une route --></app-ui></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BtnComponent', 'selector': 'app-btn'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormOrderComponent', 'selector': 'app-form-order'},{'name': 'GabaritContainerComponent', 'selector': 'app-gabarit-container'},{'name': 'GabaritFullWidthComponent', 'selector': 'app-gabarit-full-width'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IconCloseComponent', 'selector': 'app-icon-close'},{'name': 'IconDeleteComponent', 'selector': 'app-icon-delete'},{'name': 'IconEditComponent', 'selector': 'app-icon-edit'},{'name': 'IconNavComponent', 'selector': 'app-icon-nav'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'PageAddClientComponent', 'selector': 'app-page-add-client'},{'name': 'PageAddOrderComponent', 'selector': 'app-page-add-order'},{'name': 'PageEditClientComponent', 'selector': 'app-page-edit-client'},{'name': 'PageEditOrderComponent', 'selector': 'app-page-edit-order'},{'name': 'PageForgotComponent', 'selector': 'app-page-forgot'},{'name': 'PageListClientsComponent', 'selector': 'app-page-list-clients'},{'name': 'PageListOrdersComponent', 'selector': 'app-page-list-orders'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PageResetComponent', 'selector': 'app-page-reset'},{'name': 'PageSignInComponent', 'selector': 'app-page-sign-in'},{'name': 'PageSignUpComponent', 'selector': 'app-page-sign-up'},{'name': 'TableLightComponent', 'selector': 'app-table-light'},{'name': 'Ui2Component', 'selector': 'app-ui2'},{'name': 'UiComponent', 'selector': 'app-ui'}];
+        var COMPONENT_TEMPLATE = '<div><app-ui>  <h1 class="tr-header">{{ title }}</h1>  <app-icon-nav class="tr-btn-open"></app-icon-nav>  <app-icon-close class="tr-btn-close"></app-icon-close>  <!-- ici dans le dom ui component html on projette un ensemble d\'elements à l\'aide de plusieurs ng-content  -->  <app-header class="tr-header"></app-header>  <app-nav class="tr-nav"></app-nav>  <app-footer class="tr-footer"></app-footer>  <router-outlet class="tr-content"></router-outlet>  <!-- projection d\'un component qui correspond à une route --></app-ui>{{ check() }}</div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BtnComponent', 'selector': 'app-btn'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormOrderComponent', 'selector': 'app-form-order'},{'name': 'GabaritContainerComponent', 'selector': 'app-gabarit-container'},{'name': 'GabaritFullWidthComponent', 'selector': 'app-gabarit-full-width'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IconCloseComponent', 'selector': 'app-icon-close'},{'name': 'IconDeleteComponent', 'selector': 'app-icon-delete'},{'name': 'IconEditComponent', 'selector': 'app-icon-edit'},{'name': 'IconNavComponent', 'selector': 'app-icon-nav'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'PageAddClientComponent', 'selector': 'app-page-add-client'},{'name': 'PageAddOrderComponent', 'selector': 'app-page-add-order'},{'name': 'PageEditClientComponent', 'selector': 'app-page-edit-client'},{'name': 'PageEditOrderComponent', 'selector': 'app-page-edit-order'},{'name': 'PageForgotComponent', 'selector': 'app-page-forgot'},{'name': 'PageListClientsComponent', 'selector': 'app-page-list-clients'},{'name': 'PageListOrdersComponent', 'selector': 'app-page-list-orders'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PageResetComponent', 'selector': 'app-page-reset'},{'name': 'PageSignInComponent', 'selector': 'app-page-sign-in'},{'name': 'PageSignUpComponent', 'selector': 'app-page-sign-up'},{'name': 'SignInFormComponent', 'selector': 'app-sign-in-form'},{'name': 'SignUpFormComponent', 'selector': 'app-sign-up-form'},{'name': 'TableLightComponent', 'selector': 'app-table-light'},{'name': 'Ui2Component', 'selector': 'app-ui2'},{'name': 'UiComponent', 'selector': 'app-ui'}];
     var DIRECTIVES = [{'name': 'StateDirective', 'selector': '[appState]'}];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>

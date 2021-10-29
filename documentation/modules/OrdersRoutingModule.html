@@ -79,9 +79,20 @@ import { PageEditOrderComponent } from &#x27;./pages/page-edit-order/page-edit-o
 import { PageListOrdersComponent } from &#x27;./pages/page-list-orders/page-list-orders.component&#x27;;
 
 const routes: Routes &#x3D; [
-  { path: &#x27;&#x27;, component: PageListOrdersComponent },
-  { path: &#x27;add&#x27;, component: PageAddOrderComponent },
-  { path: &#x27;edit&#x27;, component: PageEditOrderComponent },
+  {
+    path: &#x27;&#x27;,
+    component: PageListOrdersComponent,
+    children: [
+      {
+        path: &#x27;add&#x27;,
+        component: PageAddOrderComponent,
+      },
+      {
+        path: &#x27;edit/:id&#x27;,
+        component: PageEditOrderComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({

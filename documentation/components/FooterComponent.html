@@ -83,6 +83,10 @@
     <table class="table table-sm table-hover">
         <tbody>
 
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
 
 
 
@@ -150,6 +154,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#check" >check</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
                             </li>
                         </ul>
@@ -175,7 +182,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/core/components/footer/footer.component.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/core/components/footer/footer.component.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -226,6 +233,43 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="check"></a>
+                    <span class="name">
+                        <span ><b>check</b></span>
+                        <a href="#check"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>check()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">src/app/core/components/footer/footer.component.ts:19</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="ngOnInit"></a>
                     <span class="name">
                         <span ><b>ngOnInit</b></span>
@@ -242,8 +286,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/core/components/footer/footer.component.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/core/components/footer/footer.component.ts:18</a></div>
                 </td>
             </tr>
 
@@ -285,7 +329,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/core/components/footer/footer.component.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/core/components/footer/footer.component.ts:11</a></div>
                         </td>
                     </tr>
 
@@ -298,13 +342,14 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectionStrategy, Component, OnInit } from &#x27;@angular/core&#x27;;
 import { VersionService } from &#x27;../../services/version.service&#x27;;
 
 @Component({
   selector: &#x27;app-footer&#x27;,
   templateUrl: &#x27;./footer.component.html&#x27;,
   styleUrls: [&#x27;./footer.component.scss&#x27;],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FooterComponent implements OnInit {
   public version!: number;
@@ -315,6 +360,9 @@ export class FooterComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+  check() {
+    console.log(&#x27;CD FOOTER&#x27;);
+  }
 }
 </code></pre>
     </div>
@@ -323,6 +371,7 @@ export class FooterComponent implements OnInit {
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;d-flex&quot;&gt;
   &lt;p&gt;Made with &amp;#x2661; &amp;#x2661; &amp;#x2661; by Dad ! version n° {{ version }}&lt;/p&gt;
 &lt;/div&gt;
+{{ check() }}
 </code></pre>
     </div>
 
@@ -367,8 +416,8 @@ export class FooterComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="d-flex">  <p>Made with &#x2661; &#x2661; &#x2661; by Dad ! version n° {{ version }}</p></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BtnComponent', 'selector': 'app-btn'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormOrderComponent', 'selector': 'app-form-order'},{'name': 'GabaritContainerComponent', 'selector': 'app-gabarit-container'},{'name': 'GabaritFullWidthComponent', 'selector': 'app-gabarit-full-width'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IconCloseComponent', 'selector': 'app-icon-close'},{'name': 'IconDeleteComponent', 'selector': 'app-icon-delete'},{'name': 'IconEditComponent', 'selector': 'app-icon-edit'},{'name': 'IconNavComponent', 'selector': 'app-icon-nav'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'PageAddClientComponent', 'selector': 'app-page-add-client'},{'name': 'PageAddOrderComponent', 'selector': 'app-page-add-order'},{'name': 'PageEditClientComponent', 'selector': 'app-page-edit-client'},{'name': 'PageEditOrderComponent', 'selector': 'app-page-edit-order'},{'name': 'PageForgotComponent', 'selector': 'app-page-forgot'},{'name': 'PageListClientsComponent', 'selector': 'app-page-list-clients'},{'name': 'PageListOrdersComponent', 'selector': 'app-page-list-orders'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PageResetComponent', 'selector': 'app-page-reset'},{'name': 'PageSignInComponent', 'selector': 'app-page-sign-in'},{'name': 'PageSignUpComponent', 'selector': 'app-page-sign-up'},{'name': 'TableLightComponent', 'selector': 'app-table-light'},{'name': 'Ui2Component', 'selector': 'app-ui2'},{'name': 'UiComponent', 'selector': 'app-ui'}];
+        var COMPONENT_TEMPLATE = '<div><div class="d-flex">  <p>Made with &#x2661; &#x2661; &#x2661; by Dad ! version n° {{ version }}</p></div>{{ check() }}</div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BtnComponent', 'selector': 'app-btn'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormOrderComponent', 'selector': 'app-form-order'},{'name': 'GabaritContainerComponent', 'selector': 'app-gabarit-container'},{'name': 'GabaritFullWidthComponent', 'selector': 'app-gabarit-full-width'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IconCloseComponent', 'selector': 'app-icon-close'},{'name': 'IconDeleteComponent', 'selector': 'app-icon-delete'},{'name': 'IconEditComponent', 'selector': 'app-icon-edit'},{'name': 'IconNavComponent', 'selector': 'app-icon-nav'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'PageAddClientComponent', 'selector': 'app-page-add-client'},{'name': 'PageAddOrderComponent', 'selector': 'app-page-add-order'},{'name': 'PageEditClientComponent', 'selector': 'app-page-edit-client'},{'name': 'PageEditOrderComponent', 'selector': 'app-page-edit-order'},{'name': 'PageForgotComponent', 'selector': 'app-page-forgot'},{'name': 'PageListClientsComponent', 'selector': 'app-page-list-clients'},{'name': 'PageListOrdersComponent', 'selector': 'app-page-list-orders'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PageResetComponent', 'selector': 'app-page-reset'},{'name': 'PageSignInComponent', 'selector': 'app-page-sign-in'},{'name': 'PageSignUpComponent', 'selector': 'app-page-sign-up'},{'name': 'SignInFormComponent', 'selector': 'app-sign-in-form'},{'name': 'SignUpFormComponent', 'selector': 'app-sign-up-form'},{'name': 'TableLightComponent', 'selector': 'app-table-light'},{'name': 'Ui2Component', 'selector': 'app-ui2'},{'name': 'UiComponent', 'selector': 'app-ui'}];
     var DIRECTIVES = [{'name': 'StateDirective', 'selector': '[appState]'}];
     var ACTUAL_COMPONENT = {'name': 'FooterComponent'};
 </script>

@@ -79,6 +79,7 @@ import {
   RouterModule,
   Routes,
 } from &#x27;@angular/router&#x27;;
+import { AuthGuard } from &#x27;./core/guards/auth.guard&#x27;;
 
 const routes: Routes &#x3D; [
   { path: &#x27;&#x27;, redirectTo: &#x27;/sign-in&#x27;, pathMatch: &#x27;full&#x27; },
@@ -86,11 +87,13 @@ const routes: Routes &#x3D; [
     path: &#x27;orders&#x27;,
     loadChildren: () &#x3D;&gt;
       &quot;import(&#x27;./orders/orders.module&#x27;).then((m) &#x3D;&gt; m.OrdersModule)&quot;,
+    canActivate: [AuthGuard],
   },
   {
     path: &#x27;clients&#x27;,
     loadChildren: () &#x3D;&gt;
       &quot;import(&#x27;./clients/clients.module&#x27;).then((m) &#x3D;&gt; m.ClientsModule)&quot;,
+    canActivate: [AuthGuard],
   },
   {
     path: &#x27;**&#x27;,

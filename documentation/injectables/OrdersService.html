@@ -61,6 +61,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>this service manage collection orders</p>
+
+            </p>
 
             <p class="comment">
                 <h3>Extends</h3>
@@ -112,6 +119,14 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#delete" >delete</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getItemById" >getItemById</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#update" >update</a>
                             </li>
                             <li>
@@ -155,7 +170,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/core/services/orders.service.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/core/services/orders.service.ts:24</a></div>
                             </td>
                         </tr>
 
@@ -220,8 +235,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="51"
-                            class="link-to-prism">src/app/core/services/orders.service.ts:51</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">src/app/core/services/orders.service.ts:66</a></div>
                 </td>
             </tr>
 
@@ -291,8 +306,101 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/app/core/services/orders.service.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">src/app/core/services/orders.service.ts:52</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>item</td>
+                                    <td>
+                                                <code><a href="../classes/Order.html" target="_self" >Order</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>get the order on witch we want to change state</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>state</td>
+                                    <td>
+                                                <code><a href="../classes/Order.html" target="_self" >StateOrder</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>new state choose by user for an order</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Order.html" target="_self" >Observable&lt;Order&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>return method to update order in collection</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="delete"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>delete</b></span>
+                        <a href="#delete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>delete(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="80"
+                            class="link-to-prism">src/app/core/services/orders.service.ts:80</a></div>
                 </td>
             </tr>
 
@@ -313,9 +421,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>item</td>
+                                    <td>id</td>
                                     <td>
-                                                <code><a href="../classes/Order.html" target="_self" >Order</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                     </td>
 
                                     <td>
@@ -324,10 +432,69 @@
 
 
                                 </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getItemById"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getItemById</b></span>
+                        <a href="#getItemById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getItemById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="73"
+                            class="link-to-prism">src/app/core/services/orders.service.ts:73</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
                                 <tr>
-                                    <td>state</td>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
                                     <td>
-                                                <code><a href="../classes/Order.html" target="_self" >StateOrder</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                     </td>
 
                                     <td>
@@ -374,8 +541,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">src/app/core/services/orders.service.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/app/core/services/orders.service.ts:59</a></div>
                 </td>
             </tr>
 
@@ -526,10 +693,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/core/services/orders.service.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/core/services/orders.service.ts:20</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Observable collection$ to return collection orders</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -552,10 +725,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/core/services/orders.service.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/core/services/orders.service.ts:24</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>variable to get urlApi from environment</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -581,9 +760,20 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/core/services/orders.service.ts:27</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/core/services/orders.service.ts:35</a></div>
                                 </td>
                             </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>getter to return collection orders</p>
+</div>
+
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="../classes/Order.html" target="_self" >Observable&lt;Order[]&gt;</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -592,11 +782,13 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/core/services/orders.service.ts:32</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/core/services/orders.service.ts:42</a></div>
                                 </td>
                             </tr>
                     <tr>
                         <td class="col-md-4">
+                                <div class="io-description"><p>setter to initialize collection orders</p>
+</div>
 
                                 <div class="io-description">
                                         <b>Parameters :</b>
@@ -642,39 +834,54 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
-import { catchError, tap } from &#x27;rxjs/operators&#x27;;
+import { catchError } from &#x27;rxjs/operators&#x27;;
 import { environment } from &#x27;src/environments/environment&#x27;;
 import { AbstractErrorHandler } from &#x27;../abstract/abstract-error-handler&#x27;;
 import { StateOrder } from &#x27;../enums/state-order&#x27;;
 import { Order } from &#x27;../models/order&#x27;;
-
+/**
+ * @description
+ * this service manage collection orders
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;,
 })
 export class OrdersService extends AbstractErrorHandler {
+  /**
+   * Observable collection$ to return collection orders
+   */
   private collection$!: Observable&lt;Order[]&gt;;
+  /**
+   * variable to get urlApi from environment
+   */
   private urlApi &#x3D; environment.urlApi;
   constructor(private http: HttpClient) {
     super();
-    this.collection &#x3D; this.http.get&lt;Order[]&gt;(&#x60;${this.urlApi}/orders&#x60;).pipe(
-      tap((flux) &#x3D;&gt; {
-        console.log(flux);
-      }),
-      catchError(this.handleError)
-    );
+    this.collection &#x3D; this.http
+      .get&lt;Order[]&gt;(&#x60;${this.urlApi}/orders&#x60;)
+      .pipe(catchError(this.handleError));
   }
 
-  // get collection
+  /**
+   * getter to return collection orders
+   */
   get collection(): Observable&lt;Order[]&gt; {
     return this.collection$;
   }
 
-  // set collection
+  /**
+   * setter to initialize collection orders
+   */
   set collection(col: Observable&lt;Order[]&gt;) {
     this.collection$ &#x3D; col;
   }
 
-  // change state item
+  /**
+   *
+   * @param item get the order on witch we want to change state
+   * @param state new state choose by user for an order
+   * @returns return method to update order in collection
+   */
   public changeState(item: Order, state: StateOrder): Observable&lt;Order&gt; {
     const obj &#x3D; new Order(item);
     obj.state &#x3D; state;
@@ -690,12 +897,24 @@ export class OrdersService extends AbstractErrorHandler {
 
   // add item in collection
   public add(item: Order): Observable&lt;Order&gt; {
-    return this.http.post&lt;Order&gt;(&#x60;${this.urlApi}/orders&#x60;, item);
+    return this.http
+      .post&lt;Order&gt;(&#x60;${this.urlApi}/orders&#x60;, item)
+      .pipe(catchError(this.handleError));
   }
 
-  // delete item in collection
-
   // get item by id
+  public getItemById(id: number): Observable&lt;Order&gt; {
+    return this.http
+      .get&lt;Order&gt;(&#x60;${this.urlApi}/orders/${id}&#x60;)
+      .pipe(catchError(this.handleError));
+  }
+
+  // delete item
+  public delete(id: number): Observable&lt;any&gt; {
+    return this.http
+      .delete&lt;any&gt;(&#x60;${this.urlApi}/orders/${id}&#x60;)
+      .pipe(catchError(this.handleError));
+  }
 }
 </code></pre>
     </div>
