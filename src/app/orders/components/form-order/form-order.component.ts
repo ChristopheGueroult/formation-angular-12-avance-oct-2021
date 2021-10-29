@@ -60,7 +60,4 @@ export class FormOrderComponent implements OnInit {
   public onSubmit(): void {
     this.submited.emit(this.form.value);
   }
-  public check(): void {
-    console.log('CD FORM ORDER');
-  }
 }

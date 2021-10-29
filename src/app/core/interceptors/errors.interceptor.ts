@@ -14,7 +14,7 @@ export class ErrorsInterceptor implements HttpInterceptor {
   constructor(private authService: AuthenticationService) {}
 
   intercept(
-    request: HttpRequest<unknown>,
+    request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
     return next.handle(request).pipe(
@@ -23,7 +23,7 @@ export class ErrorsInterceptor implements HttpInterceptor {
           this.authService.logout();
           location.reload();
         }
-        const err = error.error.message || error.statusText;
+        const err = error.error?.message || error.statusText || error;
         return throwError(err);
       })
     );

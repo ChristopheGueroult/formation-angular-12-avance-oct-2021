@@ -11,7 +11,7 @@ import { Observable, of, throwError } from 'rxjs';
 import { delay, dematerialize, materialize, mergeMap } from 'rxjs/operators';
 import { User } from '../models/user';
 
-let users = JSON.parse(localStorage.getItem('users')!) || [];
+
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
@@ -19,6 +19,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
+    let users = JSON.parse(localStorage.getItem('users')!) || [];
     const { url, method, headers, body } = request;
     return of(null)
       .pipe(mergeMap(handleRoute))

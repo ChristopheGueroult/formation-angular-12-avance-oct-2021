@@ -35,9 +35,6 @@ export class NavComponent implements OnInit {
   public toggle() {
     this.navService.toggle();
   }
-  check() {
-    console.log('CD NAV');
-  }
   public changeLang(event: any) {
     const lang = event.target.value;
     this.translateService.use(lang);

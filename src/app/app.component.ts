@@ -12,7 +12,5 @@ export class AppComponent {
     this.translateService.setDefaultLang('fr');
   }
   title = 'crm';
-  check() {
-    console.log('CD APP');
-  }
+  
 }

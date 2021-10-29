@@ -4,36 +4,36 @@ import {
   HTTP_INTERCEPTORS,
 } from '@angular/common/http';
 import { DEFAULT_CURRENCY_CODE, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, TransferState } from '@angular/platform-browser';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { TransferHttpCacheModule } from '@nguniversal/common';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { fakeBackendProvider } from './core/helpers/fake-backend';
+import { translateBrowserLoaderFactory } from './core/helpers/translate-loader.browser';
 import { ErrorsInterceptor } from './core/interceptors/errors.interceptor';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { rootReducers } from './core/store';
-export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     CoreModule,
+    TransferHttpCacheModule,
     AppRoutingModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: createTranslateLoader,
-        deps: [HttpClient],
+        useFactory: translateBrowserLoaderFactory,
+        deps: [HttpClient, TransferState],
       },
     }),
     StoreModule.forRoot(rootReducers),
